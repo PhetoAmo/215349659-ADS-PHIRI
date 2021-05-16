@@ -1,0 +1,88 @@
+﻿@model MVCLogin.Models.course
+@{
+    Layout = null;
+
+    }
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div id="Login-div">
+        @using (Html.BeginForm("Index", "Attendance", FormMethod.Post))
+        {
+
+
+            <table>
+                <tr>
+                    <td></td>
+                    <td style="text-decoration-line:underline">Login pge</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.student_d)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.student_d)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.student_d)</td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.course_id)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.course_id)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.course_id)</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(model => model.teacher_id)
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.teacher_id)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessageFor(model => model.teacher_id)</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label class="field-validation-error">@Html.DisplayFor(model => model.CheckDetailsMessage)</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <input type="submit" name="name" value="Submit" />
+                        @*<input type="Reset" name="name" value="Clear" />*@
+                    </td>
+                </tr>
+
+            </table>
+        }
+
+
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <div>
+    </div>
+</body>
+</html>
